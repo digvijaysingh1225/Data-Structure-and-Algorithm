@@ -25,13 +25,13 @@ public class FullBST {
     static BinaryNode<Integer> root;
     static int size;
     static int sum;// for replacement function
-//    public static void insert(int value){
-//        BinaryNode<Integer> n=new BinaryNode<>(value);
-//        if (root==null){
-//            root=n;
-//            return;
-//        }
-//    }
+    public static void insert(int value){
+        BinaryNode<Integer> n=new BinaryNode<>(value);
+        if (root==null){
+            root=n;
+            return;
+        }
+    }
 
     public static void insertRecursion2(BinaryNode<Integer> r, int value){
         // accepts value to be inserted
@@ -122,7 +122,7 @@ public class FullBST {
 
     }
     public static void pathcalling(){
-        LinkedList<Integer> pat=path(root, 10);
+        LinkedList<Integer> pat=path(root, 25);
         if (pat==null){
             System.out.println("Item not in the tree");
         }
@@ -224,14 +224,15 @@ public class FullBST {
         ReplaceWithGreaterValuesNodes(arr);
         traverse(root);
         System.out.print("\n               -----\n");
-        // traverseAndReplace(root);
+         traverseAndReplace(root);
         replaceWhileTraversing(root);
         traverse(root);
-
+        pathcalling();
 
 
 
     }
+
 }
 
 

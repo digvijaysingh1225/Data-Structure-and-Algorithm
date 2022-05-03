@@ -54,18 +54,18 @@ public class FirstTree {
         return 1+ countNodes(x.left)+countNodes(x.right);
     }
 
-//    public myNode1 problem(int[] arr){
-//        int val=1;
-//        val++;
-//
-//        if(arr[val]==-1){
-//            return null;
-//        }
-//        myNode1 n1 = new myNode1(arr[val]);
-//        n1.left=problem(arr);
-//        n1.right= problem(arr);
-//        return n1;
-//    }
+    public BinaryNode problem(int[] arr){
+        int val=1;
+        val++;
+
+        if(arr[val]==-1){
+            return null;
+        }
+        BinaryNode<Integer> n1 = new BinaryNode<>(arr[val]);
+        n1.left=problem(arr);
+        n1.right= problem(arr);
+        return n1;
+    }
 
     public void postorder(BinaryNode x){
         if(x==null)

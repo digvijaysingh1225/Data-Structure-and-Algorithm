@@ -35,6 +35,7 @@ public class AVL {
         updateheightandbalance(B);
         return B;
     }
+
     public static AVLNode getrotation(AVLNode node){
         updateheightandbalance(node);
         if(node.balance==2){

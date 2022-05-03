@@ -9,6 +9,7 @@ public class MyGraph {
         obj = new HashMap<>();
     }
 
+
     public void addEdge(int v1,int v2,boolean isbidirectional){
         LinkedList<Integer> v1neighbour = obj.getOrDefault(v1,new LinkedList<>());
         v1neighbour.add(v2);
@@ -42,16 +43,25 @@ public class MyGraph {
 
     public static void main(String[] args) {
         MyGraph g = new MyGraph();
-        g.addEdge(1,2,true);
+        Set<Integer> vis = new HashSet<>();
+        g.addEdge(0,1,true);
+        g.addEdge(0,3,true);
+        g.addEdge(0,8,true);
+        g.addEdge(1,7,true);
         g.addEdge(2,3,true);
+        g.addEdge(2,5,true);
+        g.addEdge(2,7,true);
         g.addEdge(3,4,true);
-        g.addEdge(4,5,true);
+        g.addEdge(4,8,true);
         g.addEdge(5,6,true);
-        g.addEdge(1,4,true);
+
+
+
         System.out.println(g.obj);
+        g.DFS(0,vis);
 
 //        g.bfsTraversal(5);
-        g.SSSP(3);
+//        g.SSSP(3);
     }
 //    public void addEdge(int v1,int v2,boolean isbidirectional){
 //        ProblemLL v1neighbour = obj.getOrDefault(v1,new ProblemLL());
@@ -83,6 +93,16 @@ public class MyGraph {
                 }
             }
         }
+    }
+    public void DFS(int source,Set<Integer> vis){
+        vis.add(source);
+        List<Integer> neighbourList = obj.get(source);
+        for (int neighbour : neighbourList) {
+            if(!vis.contains(neighbour)){
+                DFS(neighbour,vis);
+            }
+        }
+        System.out.println(source);
     }
 
 }

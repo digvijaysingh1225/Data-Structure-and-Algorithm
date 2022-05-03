@@ -25,10 +25,15 @@ package Tree;
 ////        else if(root.data<value&&root.right==null){
 ////            root.right = new Node(value);
 ////        }
-////        if(root.data>value){
-////
+////        else{
+    ////        if(root.data>value){
+    ////            insertrecursion(root.left,value);
+    ////        }
+    ////        else if(root.data<value){
+    ////            insertrecursion(root.right,value);
+    ////        }
+////            return; //not inserting same nodes;
 ////        }
-////
 ////    }
 //    public void insert(int value){
 //        myNode1 newnode= new myNode1(value);
