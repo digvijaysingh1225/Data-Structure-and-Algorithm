@@ -13,7 +13,6 @@ public class BinarySearch {
         }
 
         int mid = start+(end-start)/2;
-
         if(target==arr[mid]){
             return mid;
         }
