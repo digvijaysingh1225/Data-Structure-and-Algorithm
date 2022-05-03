@@ -3,56 +3,52 @@ package DSA.Sorting;
 import java.util.Arrays;
 
 public class MergeSort {
-    public static void main(String[] args){
-        int[] arr={20,50,40,10} ;
-
-        System.out.println(mergesort(arr,0,arr.length));
+    public static void main(String[] args) {
+        int[] arr={5,4,3,2,1} ;
+        System.out.println(Arrays.toString(mergeSort(arr)));
     }
-
-    public static int[] mergesort(int[] arr,int start,int end){
-        if(arr.length==1){
+    static int[] mergeSort(int[] arr)
+    {
+        if(arr.length==1)
             return arr;
-        }
-        int mid = (start+end)/2;
+        int mid=arr.length/2 ;
+        int[] left=mergeSort(Arrays.copyOfRange(arr,0,mid)) ;
+        int[] right=mergeSort(Arrays.copyOfRange(arr,mid,arr.length)) ;
 
-        int left[] = mergesort(arr,start,mid);
-        int right[] = mergesort(arr,mid+1,end);
-
-        return merge(left,right);
+        return merge(left,right) ;
     }
 
-    private static int[] merge(int[] left, int[] right) {
-        int[] res = new int[left.length+right.length];
-        int i =0;
-        int j =0;
-        int k =0;
-
-        while(i<left.length && j<right.length){
-            if(left[i]<right[j]){
-                res[k]=left[i];
-                i++;
+    private static int[] merge(int[] first,int[] second)
+    {
+        int[] mix=new int[first.length + second.length] ;
+        int i=0 ;
+        int j=0 ;
+        int k=0 ;
+        while(i< first.length && j< second.length)
+        {
+            if(first[i]<second[j])
+            {
+                mix[k]= first[i] ;
+                i++ ;
             }
             else{
-                res[k]=right[j];
-                j++;
+                mix[k]=second[j] ;
+                j++ ;
             }
             k++;
         }
-
-        while(i<left.length){
-            res[k]=left[i];
-            i++;
-            k++;
+        while(i<first.length)
+        {
+            mix[k]=first[i] ;
+            i++ ;
+            k++ ;
         }
-        while(j<right.length){
-            res[k]=right[i];
-            j++;
-            k++;
+        while(j<first.length)
+        {
+            mix[k]=second[j] ;
+            j++ ;
+            k++ ;
         }
-
-        return res;
-
+        return mix ;
     }
-
-
 }
