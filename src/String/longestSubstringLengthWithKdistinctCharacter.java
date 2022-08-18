@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class longestSubstringLengthWithKdistinctCharacter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
-        int k = sc.nextInt();
+        String s = sc.nextLine(); //bccbababd
+        int k = sc.nextInt(); //2
         System.out.println(helper(s,k));
             }
     static int helper(String st,int k){

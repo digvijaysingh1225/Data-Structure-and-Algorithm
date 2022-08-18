@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class longestsSubstringLengthWithNoRepeatingCharacter {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String s = sc.nextLine();
+        String s = sc.nextLine(); //"abcabcbb"
         System.out.println(helper(s));
     }
     static int helper(String st){
