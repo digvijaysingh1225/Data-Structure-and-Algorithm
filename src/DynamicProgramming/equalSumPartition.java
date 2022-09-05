@@ -16,7 +16,7 @@ public class equalSumPartition {
         }
         else{
             return subsetSum_helper(arr,sum/2);
-//            return true;
+
         }
     }
     private static boolean subsetSum_helper(int[] arr,int sum){
