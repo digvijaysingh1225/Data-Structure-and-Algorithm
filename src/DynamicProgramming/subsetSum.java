@@ -5,10 +5,10 @@ public class subsetSum {
         int[] arr = {2,3,7,8,10};
         int sum = 31;
         int n = arr.length;
-        System.out.println(subsetSum(arr,sum,n));
+        System.out.println(subsetSum_fun(arr,sum,n));
     }
 
-    public static boolean subsetSum(int[] arr,int sum,int n){
+    public static boolean subsetSum_fun(int[] arr,int sum,int n){
         boolean[][] dp = new boolean[n+1][sum+1];
 
         for (int i = 0; i < n + 1 ; i++) {
