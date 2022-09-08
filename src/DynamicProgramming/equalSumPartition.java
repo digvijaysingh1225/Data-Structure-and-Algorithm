@@ -2,7 +2,7 @@ package DynamicProgramming;
 
 public class equalSumPartition {
     public static void main(String[] args) {
-        int[] arr = {1,5,11,5}; // Check for {1,5,11,9} for even sum and subset not found.
+        int[] arr = {1,5,11,9}; // Check for {1,5,11,9} for even sum and subset not found.
         System.out.println(equalSumPartition(arr));
     }
     public static boolean equalSumPartition(int[] arr){
