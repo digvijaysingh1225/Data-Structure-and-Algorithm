@@ -36,3 +36,11 @@ public class longestSubstringwithKUniqueCharacter {
         return max;
     }
 }
+
+// Problem of Pick Toys is same as this problem
+// PS: There is a boy who have to pick the maximum amount of toys stored in a reck.
+// There are two conditions are given in this problem:
+// (i) He has to pick the toys which are stored in a line.
+// (ii) and he can pick only two different types of toys but can pick any no. of toys of same type.
+// Given a String s = "abaccab" and k = 2 (which is fixed);
+//
