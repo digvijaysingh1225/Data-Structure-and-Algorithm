@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 public class longestSubstringWithNoRepeatingCharacter {
     public static void main(String[] args) {
-        String s = "abbacbebebe"; // pwwkew
+        String s = "geeksforgeeks"; // pwwkew
         System.out.println(method(s));
     }
     static int method(String s){
