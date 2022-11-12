@@ -6,6 +6,7 @@ public class boundaryTraversal {
     public static void main(String[] args) {
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
+        root.left.right = new TreeNode(23);
         root.left.left = new TreeNode(3);
         root.left.left.right = new TreeNode(4);
         root.left.left.right.left = new TreeNode(5);
@@ -22,7 +23,7 @@ public class boundaryTraversal {
     static ArrayList<Integer> boundary(TreeNode node)
     {
         ArrayList<Integer> ans = new ArrayList<>();
-        if(isLeaf(node))
+        if(!isLeaf(node))
             ans.add(node.val);
         addLeftBoundary(node, ans);
         addLeaves(node, ans);
@@ -31,13 +32,14 @@ public class boundaryTraversal {
     }
 
     private static boolean isLeaf(TreeNode root){
+
         return (root.left == null) && (root.right == null);
     }
 
     static void addLeftBoundary(TreeNode node, ArrayList<Integer> res){
         TreeNode curr = node.left;
         while(curr!=null){
-            if(isLeaf(curr)){
+            if(!isLeaf(curr)){
                 res.add(curr.val);
             }
             if(curr.left!=null){
@@ -66,7 +68,7 @@ public class boundaryTraversal {
         TreeNode curr = node.right;
         ArrayList<Integer> tmp = new ArrayList<>();
         while(curr!=null){
-            if(isLeaf(curr)){
+            if(!isLeaf(curr)){
                 tmp.add(curr.val);
             }
             if(curr.right!=null){
@@ -78,7 +80,7 @@ public class boundaryTraversal {
         }
         // int i;
         for(int i = tmp.size()-1; i>=0; --i){
-            res.add(tmp.get(i));
+            res.add(i);
         }
     }
 }
