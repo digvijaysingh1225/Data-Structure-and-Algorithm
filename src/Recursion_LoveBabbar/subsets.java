@@ -15,16 +15,23 @@ public class subsets {
         return ans;
     }
     public static void subsetHelper(int[] arr,List<List<Integer>> ans,List<Integer> hel,int index){
-        if(index == arr.length){
-            ans.add(new ArrayList<>(hel));
-            return;
+//        if(index == arr.length){
+//            ans.add(new ArrayList<>(hel));
+//            return;
+//        }
+//        // exclude
+//        subsetHelper(arr,ans,hel,index+1);
+//        //include
+//        hel.add(arr[index]);
+//        subsetHelper(arr,ans,hel,index+1);
+//        hel.remove(hel.size() - 1);
+
+        ans.add(new ArrayList<>(hel));
+        for(int i = index; i < arr.length; i++) {
+            hel.add(arr[i]);
+            subsetHelper(arr, ans, hel, i + 1);
+            hel.remove(hel.size() - 1);
         }
-        // exclude
-        subsetHelper(arr,ans,hel,index+1);
-        //include
-        hel.add(arr[index]);
-        subsetHelper(arr,ans,hel,index+1);
-        hel.remove(hel.size() - 1);
 
     }
 }
